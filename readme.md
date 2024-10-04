@@ -10,13 +10,7 @@ sens is just a simple sens converter written in c++
 - easy to use (once you understand the format)
 - easily convert between (supported) games
 - easily convert to and from cm/360 values and in-game senses
-
-## supported games
-
-- `cm` -> cm/360 (absolute unit of measurement used by the 'aiming' community)
-- `val` -> riot games' valorant
-- `cs` -> all the counterstrike games (they all use the same sens scaling)
-- `dl` -> valve's deadlock
+- aliases for games (i.e. `val`, `valorant` and `valo` are all valid!)
 
 ## usage
 
@@ -34,7 +28,6 @@ valid input/output games:
         cm               cm/360
         val              valorant
         cs               counterstrike
-        dl               deadlock
         ...
 ```
 
@@ -69,11 +62,11 @@ navigate to the sens directory (wherever you downloaded it and put it lol) and t
 
 ## planned features
 
-- want to look at edge to edge sens conversion
+- want to look at fov edge to edge sens conversion
     - right now we just look at 360 sens conversion (i.e. cm/360)
     - can also implement different aspect ratio scaling
-- add more games
-    - overwatch
+- change games to just work off of json files
+    - would be a lot easier to add additional games
 - add rounding for senses
     - most games don't have the ability to have like 6 decimal places, like valorant only allows for 3 and deadlock only allows for 2
-- aliases for games i.e. be able to write `valorant` or just `val` intead of just `val`
+- ui (eventually)
