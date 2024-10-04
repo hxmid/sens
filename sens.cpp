@@ -75,7 +75,6 @@ int main( int argc, char** argv ) {
         sens = sens * ( to / from );
     }
 
-
     std::cout << sens << std::endl;
 
     return 0;

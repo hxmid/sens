@@ -2,7 +2,7 @@
 
 ## about
 
-sens is just a simple sens converter written in c++
+sens is just a simple sensitivity converter written in c++
 
 ## features
 
@@ -10,19 +10,19 @@ sens is just a simple sens converter written in c++
 - easy to use (once you understand the format)
 - easily convert between (supported) games
 - easily convert to and from cm/360 values and in-game senses
-- aliases for games (i.e. `val`, `valorant` and `valo` are all valid!)
+- aliases for (supported) games (i.e. `val`, `valorant` and `valo` are all valid!)
 
 ## usage
 
-sens is a command line tool. the easiest way to use it is to add its exe's directory to your system's path variable.
+sens is a command line tool. the easiest way to use it is to add its exe's directory to your system's path
 
-from there you can just run it using your favourite terminal using the `sens` command. this will print the most up-to-date usage for the program (i'm lazy and will probably forget to update the readme)
+from there you can just run it using your favourite terminal using the `sens` command. this will print the most up-to-date usage for the program (i'm lazy and will probably (definitely) forget to update the readme)
 
 ``` sh
 $ sens
 
 usage:
-        sens <dpi> <input sens> <input game> <output game>
+        sens <dpi> <sensitivity> <input game> <output game>
 
 valid input/output games:
         cm               cm/360
@@ -58,7 +58,7 @@ hope that helps :D
 
 ## compilation
 
-navigate to the sens directory (wherever you downloaded it and put it lol) and then just type 'make' in your terminal. if you don't have make installed (it's available on windows and linux you should get it, dude), you can just compile it using the arguments found inside the makefile.
+navigate to the sens directory (wherever you cloned it) and then just type 'make' in your terminal. if you don't have make installed (it's available on windows and linux you should get it), you can just compile it using the arguments found inside the makefile
 
 ## planned features
 
@@ -67,6 +67,6 @@ navigate to the sens directory (wherever you downloaded it and put it lol) and t
     - can also implement different aspect ratio scaling
 - change games to just work off of json files
     - would be a lot easier to add additional games
-- add rounding for senses
-    - most games don't have the ability to have like 6 decimal places, like valorant only allows for 3 and deadlock only allows for 2
+- add rounding for senses depending on game
+    - most games don't have the ability to have an arbitrary amount of decimal places - like valorant only allows for 3 and deadlock only allows for 2
 - ui (eventually)
