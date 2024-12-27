@@ -10,7 +10,7 @@
         } \
     } while (0)
 
-// todo( hamid ): switch to std::cout
+// TODO(hamid): switch to std::cout
 #define print_valid_game( name, description ) printf( "\t" name "\t\t" description "\n" )
 
 #define CONST_UNREAL         13070.32617
@@ -22,28 +22,30 @@
 
 
 void usage() {
-    printf("usage:\n\tsens <dpi> <sensitivity> <input game> <output game>\n");
-    printf("\nvalid games:\n");
-    // todo( hamid ): fix these to actually have all the extra names that i've added for each
-    print_valid_game( "cm",     "cm/360"          );
-    print_valid_game( "val",    "valorant"        );
-    print_valid_game( "cs",     "counterstrike"   );
-    print_valid_game( "dl",     "deadlock"        );
-    print_valid_game( "cod",    "call of duty"    );
-    print_valid_game( "ow",     "overwatch"       );
-    print_valid_game( "roblox", "roblox"          );
-    print_valid_game( "fn",     "fortnite"        );
-    print_valid_game( "r6",     "rainbow 6 siege" );
+    printf( "usage:\n\tsens <dpi> <sensitivity> <input game> <output game>\n" );
+    printf( "\nvalid games:\n" );
+    // TODO(hamid): fix these to actually have all the extra names that i've added for each
+    print_valid_game( "cm", "cm/360" );
+    print_valid_game( "val", "valorant" );
+    print_valid_game( "cs", "counterstrike" );
+    print_valid_game( "dl", "deadlock" );
+    print_valid_game( "cod", "call of duty" );
+    print_valid_game( "ow", "overwatch" );
+    print_valid_game( "roblox", "roblox" );
+    print_valid_game( "fn", "fortnite" );
+    print_valid_game( "r6", "rainbow 6 siege" );
+    print_valid_game( "mr", "marvel rivals" );
 }
 
 void init_games( std::unordered_map<std::string, double>& games ) {
-    add_game( CONST_UNREAL,     "val", "valorant", "valo");
-    add_game( CONST_SOURCE,     "cs", "csgo", "cs2", "css", "cs1.6", "source", "apex", "al", "counterstrike");
-    add_game( CONST_SOURCE / 2, "dl", "deadlock");
-    add_game( CONST_OW_COD,     "cod", "mw", "mw2", "bo6", "bo", "ow", "ow2", "overwatch");
-    add_game( CONST_FORTNITE,   "fn", "fortnite");
-    add_game( CONST_SIEGE,      "r6", "siege");
-    add_game( CONST_ROBLOX,     "roblox");
+    add_game( CONST_UNREAL, "val", "valorant", "valo" );
+    add_game( CONST_SOURCE, "cs", "csgo", "cs2", "css", "cs1.6", "source", "apex", "al", "counterstrike" );
+    add_game( CONST_SOURCE / 2, "dl", "deadlock" );
+    add_game( CONST_OW_COD, "cod", "mw", "mw2", "bo6", "bo", "ow", "ow2", "overwatch" );
+    add_game( CONST_FORTNITE, "fn", "fortnite" );
+    add_game( CONST_SIEGE, "r6", "siege" );
+    add_game( CONST_ROBLOX, "roblox" );
+    add_game( CONST_UNREAL * 4, "mr", "marvel", "rivals", "marvelrivals" );
 }
 
 #define a_dpi  argv[1]
@@ -54,7 +56,7 @@ void init_games( std::unordered_map<std::string, double>& games ) {
 int main( int argc, char** argv ) {
 
     std::unordered_map<std::string, double> games;
-    init_games(games);
+    init_games( games );
 
     if ( argc != 5 ) {
         usage();
@@ -64,8 +66,8 @@ int main( int argc, char** argv ) {
     // todo( hamid ): error checking
     int64_t dpi = atoll( a_dpi );
     double sens = atof( a_sens );
-    double from = games[ a_from ];
-    double to   = games[ a_to ];
+    double from = games[a_from];
+    double to = games[a_to];
 
     if ( !strcmp( a_from, "cm" ) || !strcmp( a_from, "cm/360" ) ) {
         sens = to / ( sens * dpi );
